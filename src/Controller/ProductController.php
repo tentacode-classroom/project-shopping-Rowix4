@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\WhiskyRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -12,23 +13,11 @@ class ProductController extends AbstractController
      */
     public function index(int $productId)
     {
-        $product = new Product();
-        $product->id = $productId;
-        $product->name = 'product';
+        $whiskyRepo = new WhiskyRepository();
+        $whisky = $whiskyRepo->findById($productId);
 
         return $this->render('product/index.html.twig', [
-            'product_id' => $productId,
+            'whisky' => $whisky,
         ]);
-    }
-}
-
-
-class Product
-{
-    public $id;
-    public $name;
-    public function upperName()
-    {
-        return strtoupper($this->name);
     }
 }

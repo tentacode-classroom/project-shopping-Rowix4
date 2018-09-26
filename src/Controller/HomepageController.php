@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\WhiskyRepository;
 
 class HomepageController extends AbstractController
 {
@@ -12,23 +13,11 @@ class HomepageController extends AbstractController
      */
     public function index()
     {
-        $products = [
-            [
-                'id' => 1,
-                'name' => 'Product 1',
-            ],
-            [
-                'id' => 2,
-                'name' => 'Product 2',
-            ],
-            [
-                'id' => 3,
-                'name' => 'Product 3',
-            ],
-        ];
+       $whiskyRepo = new WhiskyRepository();
+       $whiskys = $whiskyRepo->findAll();
 
         return $this->render('homepage/index.html.twig', [
-            'products' => $products,
+            'whiskys' => $whiskys,
         ]);
     }
 }

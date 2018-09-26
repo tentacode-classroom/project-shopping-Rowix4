@@ -11,5 +11,18 @@ namespace App\Entity;
 
 class User
 {
+    private $id;
+    private $email;
+    private $password;
+    private $firstname;
+    private $lastname;
 
+    public function __construct($id, $email, $password, $firstname, $lastname)
+    {
+        $this->id = $id;
+        $this->email = $email;
+        $this->password = $password;
+        $this->firstname = $firstname;
+        $this->lastname = $lastname;
+    }
 }
