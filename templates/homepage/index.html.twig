@@ -15,8 +15,6 @@
             </div>
         </section>
 
-        {% include 'menu.html.twig' %}
-
         <div class="album py-5 bg-light">
             <div class="container">
                 <div class="row">
@@ -24,15 +22,15 @@
                         <div class="col-md-4">
                             <div class="card mb-4 shadow-sm">
                                 <p class="card-text product-name">{{ whisky.name }}</p>
-                                <img class="card-img-top" src="{{ asset('assets/img/clan-campbell.png') }}" alt="Clan Campbell">
+                                <!-- <img class="card-img-top" src="{{ asset('assets/img/clan-campbell.png') }}" alt="Clan Campbell"> -->
                                 <div class="card-body">
-                                    <p class="card-text">Description</p>
+                                    <p class="card-text">{{ whisky.desc }}</p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                             <a href="product/{{ whisky.id }}"><button type="button" class="btn btn-sm btn-outline-secondary">Voir</button></a>
                                             <button type="button" class="btn btn-sm btn-outline-secondary">Ajouter au panier</button>
                                         </div>
-                                        <small class="text-muted">Prix</small>
+                                        <small class="text-muted">{{ whisky.price }}</small>
                                     </div>
                                 </div>
                             </div>
