@@ -13,11 +13,15 @@ class Whisky
 {
     private $id;
     private $name;
+    private $price;
+    private $description;
 
-    public function __construct(int $id,string $name)
+    public function __construct($id, $name, $price, $description)
     {
         $this->id = $id;
         $this->name = $name;
+        $this->price = $price;
+        $this->description = $description;
     }
 
     public function getName(){
@@ -26,5 +30,13 @@ class Whisky
 
     public function getId(){
         return $this->id;
+    }
+
+    public function getPrice(){
+        return $this->price;
+    }
+
+    public function getDesc(){
+        return $this->description;
     }
 }

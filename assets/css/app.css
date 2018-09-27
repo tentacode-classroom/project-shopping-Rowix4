@@ -1,0 +1,14 @@
+body {
+    background-color: lightgray;
+}
+
+.card-img-top{
+    max-width: 25%;
+    padding: 5px;
+    margin-left: 35%;
+}
+
+.product-name{
+    padding: 15px;
+    font-size: 18px;
+}

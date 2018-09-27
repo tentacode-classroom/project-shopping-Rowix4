@@ -17,11 +17,11 @@ class WhiskyRepository
 
     public function __construct()
     {
-        $whisky1 = new Whisky(1,"William Peel");
-        $whisky2 = new Whisky(2,"Jack Daniel's");
-        $whisky3 = new Whisky(3,"Clan Campbell");
-        $whisky4 = new Whisky(4,"Label 5");
-        $whisky5 = new Whisky(5,"Ballantine's");
+        $whisky1 = new Whisky(1,"William Peel", "11,30", "Whisky William Peel 70cl");
+        $whisky2 = new Whisky(2,"Jack Daniel's", "26,50", "Whisky Jack Daniel's 70cl");
+        $whisky3 = new Whisky(3,"Clan Campbell", "14,30", "Whisky Clan Campbell 70cl");
+        $whisky4 = new Whisky(4,"Label 5", "12,90", "Whisky Label 5 70cl");
+        $whisky5 = new Whisky(5,"Ballantine's", "15,60", "Whisky Ballantine's 70cl");
 
         $this->whiskys = [
             $whisky1,
