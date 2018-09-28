@@ -25,6 +25,14 @@ class ProductController extends AbstractController
             );
         }
 
+        $productView = $product->getViewCounter();
+        $productView++;
+        $product->setViewCounter($productView);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($product);
+        $entityManager->flush();
+
         return $this->render('product/index.html.twig', [
             'product' => $product,
         ]);

@@ -31,6 +31,11 @@ class Product
      */
     private $description;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $viewCounter;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -68,6 +73,18 @@ class Product
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getViewCounter(): ?int
+    {
+        return $this->viewCounter;
+    }
+
+    public function setViewCounter(?int $viewCounter): self
+    {
+        $this->viewCounter = $viewCounter;
 
         return $this;
     }
