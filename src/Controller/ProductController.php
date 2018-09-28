@@ -6,6 +6,7 @@ use App\Entity\Product;
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
 
 class ProductController extends AbstractController
 {
@@ -24,6 +25,8 @@ class ProductController extends AbstractController
             );
         }
 
-        return new Response('Check out this great product: ' . $product->getName());
+        return $this->render('product/index.html.twig', [
+            'product' => $product,
+        ]);
     }
 }

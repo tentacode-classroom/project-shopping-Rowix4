@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Product;
+use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Repository\WhiskyRepository;
 
 class HomepageController extends AbstractController
 {
@@ -13,8 +14,9 @@ class HomepageController extends AbstractController
      */
     public function index()
     {
-       $whiskyRepo = new WhiskyRepository();
-       $whiskys = $whiskyRepo->findAll();
+        $doctrine = $this->getDoctrine();
+        $productRepository = $doctrine->getRepository(Product::class);
+        $whiskys = $productRepository->findAll();
 
         return $this->render('homepage/index.html.twig', [
             'whiskys' => $whiskys,
