@@ -9,13 +9,13 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>My product {{ whisky.name }}</h1>
+    <h1>{{ whisky.name }} <span class="badge badge-danger">HOT</span></h1>
 
     Product information:
     <ul>
         <li>Good product</li>
         <li>Cheap product</li>
     </ul>
-    <br><a href="/">Home</a>
+    <br><a href="{{ path('homepage') }}">Home</a>
 </div>
 {% endblock %}

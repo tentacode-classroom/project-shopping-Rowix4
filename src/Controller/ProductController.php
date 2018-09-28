@@ -2,22 +2,28 @@
 
 namespace App\Controller;
 
-use App\Repository\WhiskyRepository;
+use App\Entity\Product;
+use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ProductController extends AbstractController
 {
     /**
-     * @Route("/product/{productId}", name="product")
+     * @Route("/product/{id}", name="product_show")
      */
-    public function index(int $productId)
+    public function show($id)
     {
-        $whiskyRepo = new WhiskyRepository();
-        $whisky = $whiskyRepo->findById($productId);
+        $product = $this->getDoctrine()
+            ->getRepository(Product::class)
+            ->find($id);
 
-        return $this->render('product/index.html.twig', [
-            'whisky' => $whisky,
-        ]);
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id ' . $id
+            );
+        }
+
+        return new Response('Check out this great product: ' . $product->getName());
     }
 }
