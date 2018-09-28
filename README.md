@@ -1,3 +1,3 @@
 "# project-shopping-Rowix4" 
 
-Projet markeplact Symfony Gigant Léo
+Projet markeplace Symfony Gigant Léo
