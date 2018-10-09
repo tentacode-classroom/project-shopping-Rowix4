@@ -13,7 +13,8 @@ class WhiskyFixture extends Fixture
         // $product = new Product();
         // $manager->persist($product);
 
-        $category = new
+        // $category = new Category();
+        // $category->setName("medium");
 
         $product1 = new Product();
         $product1->setName('William Peel');
@@ -26,6 +27,9 @@ class WhiskyFixture extends Fixture
         $product2->setPrice('26.50');
         $product2->setDescription('Whisky Jack Daniel\'s 70cl');
         $product2->setViewCounter(0);
+
+        // $product1->setCategory($category);
+        // $product2->setCategory($category);
 
         $manager->persist($product1);
         $manager->persist($product2);
