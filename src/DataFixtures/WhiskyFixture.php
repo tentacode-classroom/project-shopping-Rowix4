@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use App\Entity\Product;
+use App\Entity\Category;
 
 class WhiskyFixture extends Fixture
 {
@@ -13,8 +14,10 @@ class WhiskyFixture extends Fixture
         // $product = new Product();
         // $manager->persist($product);
 
-        // $category = new Category();
-        // $category->setName("medium");
+        $category = new Category();
+        $category->setName("medium");
+
+        $manager->persist($category);
 
         $product1 = new Product();
         $product1->setName('William Peel');
@@ -28,8 +31,8 @@ class WhiskyFixture extends Fixture
         $product2->setDescription('Whisky Jack Daniel\'s 70cl');
         $product2->setViewCounter(0);
 
-        // $product1->setCategory($category);
-        // $product2->setCategory($category);
+        $product1->setCategory($category);
+        $product2->setCategory($category);
 
         $manager->persist($product1);
         $manager->persist($product2);
