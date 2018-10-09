@@ -13,6 +13,8 @@ class WhiskyFixture extends Fixture
         // $product = new Product();
         // $manager->persist($product);
 
+        $category = new
+
         $product1 = new Product();
         $product1->setName('William Peel');
         $product1->setPrice('11.30');
