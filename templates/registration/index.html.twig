@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Shelby Limited - Sign up{% endblock %}
+
+{% block body %}
+    <style>
+        .register-form{
+            margin-top: 50px;
+            margin-bottom: 100px;
+            margin-left: 25%;
+        }
+    </style>
+    <div class="register-form">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

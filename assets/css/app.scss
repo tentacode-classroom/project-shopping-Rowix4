@@ -31,5 +31,13 @@ body {
     .lead{
         color: $white;
     }
+
+    footer {
+        position: relative;
+        margin-top: auto; /* negative value of footer height */
+        height: auto;
+        clear: both;
+        width: 100%;
+    }
 }
 
