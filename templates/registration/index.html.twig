@@ -7,12 +7,18 @@
         .register-form{
             margin-top: 50px;
             margin-bottom: 100px;
-            margin-left: 25%;
+            margin-left: 35%;
+            margin-right: 35%;
         }
     </style>
     <div class="register-form">
         {{ form_start(form) }}
-        {{ form_widget(form) }}
+        {# {{ form_widget(form) }} équivaut à : #}
+        {{ form_row(form.email) }}
+        {{ form_row(form.password) }}
+        <hr />
+        {{ form_row(form.firstname) }}
+        {{ form_row(form.lastname) }}
         {{ form_end(form) }}
     </div>
 {% endblock %}

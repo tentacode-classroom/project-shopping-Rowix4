@@ -2,8 +2,14 @@
 
 $white: #fff;
 
+html{
+    height:100%;
+}
+
 body {
     background-color: lightgray;
+    height: 100%;
+    position: relative;
 
     .card-img-top{
         max-width: 25%;
@@ -31,13 +37,11 @@ body {
     .lead{
         color: $white;
     }
+}
 
-    footer {
-        position: relative;
-        margin-top: auto; /* negative value of footer height */
-        height: auto;
-        clear: both;
-        width: 100%;
-    }
+footer{
+    height: 100px;
+    position: absolute;
+    bottom: 0;
 }
 

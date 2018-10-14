@@ -25,7 +25,7 @@ class RegistrationController extends AbstractController
             ->add('lastname', TextType::class)
             ->add('email', EmailType::class)
             ->add('password', PasswordType::class)
-            ->add('save', SubmitType::class, array('label' => 'Sign up'))
+            ->add('sign up', SubmitType::class)
             ->getForm();
 
         $form->handleRequest($request);

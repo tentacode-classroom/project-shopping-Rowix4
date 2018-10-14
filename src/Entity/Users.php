@@ -45,6 +45,16 @@ class Users
      */
     private $lastname;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $birthday;
+
+    /**
+     * @ORM\Column(type="simple_array")
+     */
+    private $roles = [];
+
     public function getId(): ?int
     {
         return $this->id;
@@ -94,6 +104,30 @@ class Users
     public function setLastname(string $lastname): self
     {
         $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    public function getBirthday(): ?string
+    {
+        return $this->birthday;
+    }
+
+    public function setBirthday(?string $birthday): self
+    {
+        $this->birthday = $birthday;
+
+        return $this;
+    }
+
+    public function getRoles(): ?array
+    {
+        return $this->roles;
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
 
         return $this;
     }
